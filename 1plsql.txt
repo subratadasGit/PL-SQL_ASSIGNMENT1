@@ -1,0 +1,159 @@
+1.       Write a PL/SQL to test whether a number is even or odd.
+DECLARE
+            	n NUMBER := 1634;
+            	r NUMBER;
+BEGIN
+            	r := MOD(n, 2);
+            	IF r = 0 THEN
+            	dbms_output.Put_line('Even');
+            	ELSE
+            	dbms_output.Put_line('Odd');
+            	END IF;
+END;
+========================================================================================================================================================================
+2.       Write a PL/SQL block to calculate maximum of three numbers.
+DECLARE
+ N1 NUMBER := 5; N2 NUMBER := 4; N3 NUMBER := 7;
+BEGIN
+ 	IF N1 > N2
+    	AND N1 > N3
+       	THEN
+                   dbms_output.Put_line(N1||' ' || 'GREATEST NUMBER');
+ 	ELSIF N2> N1
+     	AND N2 > N3
+         	THEN
+                  dbms_output.Put_line(N2 || ' '|| 'GREATEST NUMBER');
+ 	ELSE  
+             dbms_output.Put_line(N3 ||' ' || 'GREATEST NUMBER');
+   END IF;
+END;
+ 
+ ========================================================================================================================================================================
+3. Write a PL/SQL block to find the factorial of a given number.
+
+DECLARE 
+    N NUMBER := 5;
+    FACT NUMBER := 1 ;
+BEGIN 
+   WHILE N > 0 LOOP 
+        FACT := FACT * N ;
+        N := N-1 ;
+    END LOOP;
+   DBMS_OUTPUT.PUT_LINE(FACT) ;
+END;
+========================================================================================================================================================================
+4. Write a PL/SQL program to print first N Fibonacci number.
+declare
+first number := 0; 
+second number := 1; 
+temp number; 
+
+n number := 5; 
+i number; 
+
+begin
+
+	dbms_output.put_line(first); 
+	dbms_output.put_line(second); 
+
+ 
+	for i in 2..n 
+	loop 
+		temp:=first+second; 
+
+first := second; 
+second := temp; 
+
+	dbms_output.put_line(temp); 
+end loop; 
+
+end; 
+
+
+
+
+
+========================================================================================================================================================================
+5. Write a PL/SQL code to check whether a number is prime or not.
+DECLARE 
+    n NUMBER := 5;
+    i number  := 2 ;
+    temp number := 1 ;
+begin 
+    for i in 2 .. n/2 loop 
+         if mod(n,i) =0
+              then 
+                  temp:=0;
+                    exit;
+        else 
+              temp:= 1;
+        end if ;
+        end loop;
+if temp=1
+        then dbms_output.put_line('Prime');
+else 
+     dbms_output.put_line(' not Prime');
+end if ; 
+end;
+========================================================================================================================================================================
+6. Write a PL/SQL block of code for inverting a given number.
+
+declare 
+   n number := 123 ;
+   rev_num number :=0 ;
+
+
+begin 
+    while n > 0 loop
+          rev_num:= rev_num*10 +mod(n,10);
+          n:=trunc(n/10) ; 
+     end loop;
+  dbms_output.put_line(rev_num);
+end;
+
+
+========================================================================================================================================================================
+7. Write a PL/SQL block to calculate the age of a person.
+
+
+
+
+
+========================================================================================================================================================================
+8. i)Write a PL/SQL code block to calculate the area of a circle of a value of radius varying
+from 3 to 7. display the radius and the corresponding values of areas
+
+
+Create table Area(r number(10,2), a number(10,2));
+
+Desc Area;
+
+declare
+
+a number(10,2);
+
+i number(10,2);
+
+begin
+
+for i in 3..7
+
+loop
+
+a:=3.14*i*i;
+
+insert into Area values(i,a);
+
+end loop;
+
+end;
+
+========================================================================================================================================================================
+ii)Also calculate the diameter of the Circle and display. Diameter=2*radius.
+
+
+
+
+
+
+
